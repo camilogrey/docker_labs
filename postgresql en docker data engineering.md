@@ -55,7 +55,7 @@ Y las imágenes disponibles:
 ```bash
 docker images
 ```
-
+> ![Comprobar docker](docker_postgresql_img/1.%20comprobar%20docker.png)
 ---
 
 # 2. Descargar PostgreSQL
@@ -85,6 +85,8 @@ Aquí estamos utilizando dos comandos vistos en la clase:
 docker pull
 docker images
 ```
+
+> ![Descargar la imagen de docker](docker_postgresql_img/2.%20Descargamos%20la%20imagen%20de%20postgres.png)
 
 ---
 
@@ -162,6 +164,9 @@ hace que PostgreSQL cree inicialmente una base de datos llamada:
 empresa
 ```
 
+> ![Creamos el contenedor de postgresql y se ejecute en 2do plano](docker_postgresql_img/1.%20comprobar%20docker.png)
+
+
 ---
 
 # 4. Comprobar que el contenedor está funcionando
@@ -194,6 +199,7 @@ PostgreSQL
        ↓
 Base de datos empresa
 ```
+> ![Comprobar funcionamiento del contenedor de postgresql](docker_postgresql_img/4.%20comprobacion%20del%20funcionamiento%20del%20contenedor%20postgrest.png)
 
 ---
 
@@ -229,6 +235,11 @@ El contenedor continuará funcionando.
 
 ---
 
+> ![Revisar los logs de postgresql](docker_postgresql_img/5.%20Revisar%20los%20logs%20de%20postgres.png)
+
+> ![Revisar los logs en real time de postgresql](docker_postgresql_img/5.%20Revisar%20los%20logs%20de%20postgres%20en%20tiempo%20real.png)
+
+
 # 6. Entrar en PostgreSQL
 
 Ahora utilizamos `docker exec`.
@@ -261,6 +272,9 @@ Ya estamos dentro de PostgreSQL.
 
 ---
 
+> ![Entrar a postgresql](docker_postgresql_img/6.%20Entrar%20en%20postgresql.png)
+
+
 # 7. Crear una tabla de Staging
 
 Dentro de PostgreSQL:
@@ -290,6 +304,9 @@ Salimos:
 ```
 
 ---
+
+> ![Crear la tabla de staging de ventas](docker_postgresql_img/7.%20crear%20la%20tabal%20de%20staging.png)
+
 
 # 8. Crear un pequeño dataset CSV
 
@@ -344,6 +361,9 @@ Aquí tenemos nuestro pequeño **dataset de origen**.
 
 ---
 
+> ![Creamos un dataset csv](docker_postgresql_img/8.%20Creamos%20un%20pequeno%20database%20csv.png)
+
+
 # 9. Copiar el CSV al contenedor
 
 Utiliza:
@@ -384,6 +404,9 @@ docker exec postgres-data cat /tmp/ventas.csv
 
 ---
 
+> ![Copiamosla bbd csv a docker y comprobamos](docker_postgresql_img/9.%20Copiamos%20la%20bbdd%20csv%20a%20docker%20y%20comporbamos.png)
+
+
 # 10. Cargar el CSV en PostgreSQL
 
 Entramos nuevamente:
@@ -414,6 +437,9 @@ Eso significa que ha cargado:
 ```
 
 ---
+
+> ![ingresamos de nuevo a postgresql y cargamos el csv a postgresql](docker_postgresql_img/10.%20estramos%20denuevo%20a%20postgresql%20y%20cargamos%20el%20csv%20en%20postgresql.png)
+
 
 # 11. Validar los datos
 
@@ -465,6 +491,9 @@ Agregación
 
 ---
 
+> ![Validamos y hacemos calculos de con la bbdd y salida](docker_postgresql_img/11%20y%2012.%20Validamos%20y%20hacemos%20unos%20calculos%20el%20la%20bbdd%20staging%20ventas%20de%20postgresql%20y%20salimos%20de%20postgresql.png)
+
+
 # 12. Salir de PostgreSQL
 
 ```
@@ -493,6 +522,9 @@ Name
 
 ---
 
+> ![Inspeccionamos el contenedro](docker_postgresql_img/13.%20Inspeccionamos%20el%20contenedor%20.png)
+
+
 # 14. Consultar el puerto
 
 ```bash
@@ -516,6 +548,9 @@ Ubuntu :5432
 ```
 
 ---
+
+> ![Consultamos el puerto de Ubunto a Docker](docker_postgresql_img/14.%20Consultamos%20el%20puerto%20de%20ubuntu%20a%20docker.png)
+
 
 # 15. Consultar recursos utilizados
 
@@ -541,6 +576,9 @@ Ctrl + C
 ```
 
 ---
+
+> ![Consultamos los recursos utilizados](docker_postgresql_img/15.%20consultamos%20los%20recursos%20utilizados.png)
+
 
 # 16. Detener PostgreSQL
 
@@ -581,6 +619,9 @@ Exited
 
 ---
 
+> ![Detenemos el contenedor y comporbamos su existencia ](docker_postgresql_img/16.%20Detenemos%20el%20contenedor%20y%20comprobamos%20que%20se%20haya%20detenido%20pero%20que%20siga%20existiendo.png)
+
+
 # 17. Volver a iniciar PostgreSQL
 
 Ejecuta:
@@ -598,6 +639,9 @@ docker ps
 PostgreSQL vuelve a estar funcionando.
 
 ---
+
+> ![Iniciamos postgresql y comprobamos su inicio](docker_postgresql_img/17.%20Iniciamos%20postgresql%20y%20comprobamos.png)
+
 
 # 18. Comprobar si los datos siguen allí
 
@@ -635,6 +679,9 @@ volvemos a utilizarlo
 
 ---
 
+> ![Verificamos que los datso copiados sigan en contenedor y salimos](docker_postgresql_img/18.%20verificamos%20que%20los%20datso%20cpiado%20sigan%20en%20el%20contenedor%20de%20postgresql%20y%20salimos%20.png)
+
+
 # 19. Reiniciar PostgreSQL
 
 Podemos hacerlo directamente:
@@ -650,6 +697,9 @@ docker ps
 ```
 
 ---
+
+> ![Reiniciamos el contenedor y verificamos su existencia](docker_postgresql_img/19.%20reiniciamos%20el%20contendero%20y%20verificamos%20su%20existencia.png)
+
 
 # 20. Eliminar el contenedor
 
@@ -701,6 +751,9 @@ Recuperar los mismos datos
 
 ---
 
+> ![Detenemos el contenedor, lo eliminamos y verificamos su inexistencia](docker_postgresql_img/20.%20Ahora%20al%20contendore%20los%20detenemos%20y%20lo%20eliminamos%20y%20comprobamos%20su%20inexistencia.png)
+
+
 # 21. La imagen PostgreSQL todavía existe
 
 Aunque hayamos eliminado el contenedor:
@@ -727,6 +780,9 @@ El contenedor era una instancia creada a partir de ella.
 
 ---
 
+> ![Verificar que la imagen de postgresql existe](docker_postgresql_img/21.%20verificar%20que%20la%20imagen%20aun%20existe.png)
+
+
 # 22. Eliminar la imagen
 
 Si queremos limpiar completamente:
@@ -742,6 +798,9 @@ docker images
 ```
 
 ---
+
+> ![Eliminamos la imagen y comporbamos su inexistencia](docker_postgresql_img/22.%20eliminamos%20la%20imagen%20de%20sposgresql%20y%20comprobamos.png)
+
 
 # 23. Comandos de la Clase 1 utilizados
 
